@@ -1,0 +1,12 @@
+name: get_unlocked
+on: workflow_dispatch
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: uploaded
+          path: download
+      - run: ls -ltra
+      - run: cat download/date.txt
